@@ -233,8 +233,8 @@ Respond with a JSON object in this exact structure:
   try {
     const genAI = new GoogleGenerativeAI(apiKey.trim());
     
-    // We try the configured model, and if it fails with model not found, try gemini-1.5-flash or gemini-2.0-flash
-    const candidateModels = [modelName, 'gemini-1.5-flash', 'gemini-2.0-flash', 'gemini-2.5-flash'];
+    // We try the configured model, and candidate fallback models
+    const candidateModels = [modelName, 'gemini-3.8-flash', 'gemini-2.5-flash', 'gemini-1.5-flash', 'gemini-2.0-flash'];
     const uniqueModels = [...new Set(candidateModels)];
 
     let lastError = null;
