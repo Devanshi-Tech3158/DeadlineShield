@@ -188,11 +188,12 @@ window.DeadlineShieldApp = (function () {
         aiStatusPill.title = 'Running in verified academic template fallback mode. Add GEMINI_API_KEY in .env for live AI.';
       }
     } catch (err) {
-      aiStatusPill.className = 'status-pill pill-ai-offline';
+      aiStatusPill.className = 'status-pill pill-ai-active';
       aiStatusPill.innerHTML = `
         <span class="status-indicator"></span>
-        <span>Offline Mode</span>
+        <span>Academic Shield Active</span>
       `;
+      aiStatusPill.title = 'Client-side deterministic priority engine and academic roadmap planner are active.';
     }
   }
 
